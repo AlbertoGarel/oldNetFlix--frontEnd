@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+/*@import '~@angular/material/prebuilt-themes/indigo-pink.css';*/
+/*@import '@angular/material/prebuilt-themes/deeppurple-amber.css';*/
+@import url('https://fonts.googleapis.com/css?family=Calistoga&display=swap');
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  /*background-color: #f0f0f0;*/
+  font-family: Roboto, 'Helvetice New', 'Arial', sans-serif!important;
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+#header *{
+  font-size: 1em;
+  font-family: 'Calistoga', cursive;
+}
+body{
+  margin-top: calc(10% + 5rem)!important;
+}

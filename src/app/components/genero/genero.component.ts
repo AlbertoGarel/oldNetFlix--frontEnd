@@ -1,15 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output, ViewChild} from '@angular/core';
+import {MoviesService} from '../../servicios/movies.service';
+import {Genero} from '../../models/genero.model';
+import {MatMenu} from '@angular/material/menu';
+
 
 @Component({
   selector: 'app-genero',
   templateUrl: './genero.component.html',
-  styleUrls: ['./genero.component.css']
+  styleUrls: ['./genero.component.css'],
+  exportAs: 'menuEnGeneros'
 })
-export class GeneroComponent implements OnInit {
 
-  constructor() { }
+export class GeneroComponent implements OnInit {
+@Output() generos: Array<Genero> = [];
+
+  constructor(private movieService: MoviesService) { }
+
 
   ngOnInit() {
+    this.movieService.getAllGeneros()
+      .subscribe(
+        res => {
+          // this.generos = res['results'];
+          this.generos = res;
+          console.log(res);
+        },
+        error => console.log(error)
+      );
   }
+
 
 }

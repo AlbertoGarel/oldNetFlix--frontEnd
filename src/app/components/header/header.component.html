@@ -1,1 +1,21 @@
-<p>header works!</p>
+<header id="header">
+  <section>
+    <div id="image-nav">
+      <a routerLink="/" routerLinkActive="active-link">
+        <img src="../../../assets/images/oldNetflixLogo.png" alt="logo">
+      </a>
+    </div>
+    <div id="menu">
+      <app-genero></app-genero>
+      <a routerLink="movies/estrenos" routerLinkActive="active-link">
+        <button mat-button>POPULARES</button>
+      </a>
+    </div>
+    <div id="login">
+      <button mat-button>LOGIN</button>
+      |
+      <button mat-button>REGISTER</button>
+    </div>
+  </section>
+  <app-buscador></app-buscador>
+</header>

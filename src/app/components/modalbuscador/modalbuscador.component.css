@@ -1,0 +1,9 @@
+modal{
+  background-color: #ffa500;
+}
+mat-dialog-container seccion-peliAll{
+  display: flex!important;
+  justify-content: flex-start!important;
+  flex-wrap: wrap!important;
+}
+

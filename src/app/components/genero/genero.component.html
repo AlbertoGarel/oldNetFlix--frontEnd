@@ -1,1 +1,9 @@
-<p>genero works!</p>
+<button class="tamanio" mat-button [matMenuTriggerFor]="menu">GENEROS</button>
+<mat-menu #menu="matMenu">
+  <a *ngFor="let genero of generos" routerLink="movies/generos/{{genero.name}}" routerLinkActive="active-link">
+    <button class="tamanio" mat-menu-item data-value="{{genero.id}}">{{genero.name}}</button>
+  </a>
+</mat-menu>
+<!--<ul *ngFor="let genero of generos">-->
+<!--  <li>{{genero.name}}</li>-->
+<!--</ul>-->

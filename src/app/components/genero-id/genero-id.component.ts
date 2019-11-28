@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {MoviesService} from '../../servicios/movies.service';
+import {Movie} from '../../models/movie.model';
+import {ActivatedRoute} from '@angular/router';
+
 
 @Component({
   selector: 'app-genero-id',
@@ -6,10 +10,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./genero-id.component.css']
 })
 export class GeneroIdComponent implements OnInit {
+  peliculas: Array<Movie> = [];
 
-  constructor() { }
+  constructor(
+    private movieService: MoviesService,
+    private route: ActivatedRoute
+  ) {
+  }
 
   ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      const gender = params.get('gender');
+      gender.replace(/%20/gi, '');
+      this.movieService.getGeneroByString(gender)
+        .subscribe(movies => {
+          this.peliculas = movies;
+        });
+    });
   }
 
 }

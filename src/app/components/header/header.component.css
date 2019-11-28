@@ -1,0 +1,50 @@
+#header>section {
+  width: 100%;
+  background: white;
+  color: black;
+  font-size: 1em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /*box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;*/
+}
+#header{
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 99;
+}
+#header>section *{
+  font-size: 1em;
+}
+#menu{
+  align-self: flex-end;
+}
+#image-nav{
+  display: flex;
+}
+#image-nav img{
+  width: calc(100% - 15rem);
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-wid {
+  width: 100%;
+}
+#busqueda{
+  margin-top: 100px;
+}
+#login{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-self: self-end;
+}
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
