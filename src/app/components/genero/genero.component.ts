@@ -1,7 +1,6 @@
-import {Component, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
 import {MoviesService} from '../../servicios/movies.service';
 import {Genero} from '../../models/genero.model';
-import {MatMenu} from '@angular/material/menu';
 
 
 @Component({

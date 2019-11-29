@@ -39,7 +39,7 @@
 #busqueda{
   margin-top: 100px;
 }
-#login{
+.login{
   display: flex;
   justify-content: space-around;
   align-items: center;

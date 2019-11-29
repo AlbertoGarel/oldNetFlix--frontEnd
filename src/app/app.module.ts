@@ -28,6 +28,8 @@ import {FormsModule} from '@angular/forms';
 import { MatDialogModule } from '@angular/material';
 import {ModalbuscadorComponent} from './components/modalbuscador/modalbuscador.component';
 import {AngularMaterialModule} from './angular-material.module';
+import {LoginComponent} from './components/login/login.component';
+import {LogoutComponent} from './components/logout/logout.component';
 
 
 
@@ -41,7 +43,9 @@ import {AngularMaterialModule} from './angular-material.module';
     PopulateComponent,
     GeneroIdComponent,
     BuscadorComponent,
-    ModalbuscadorComponent
+    ModalbuscadorComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
