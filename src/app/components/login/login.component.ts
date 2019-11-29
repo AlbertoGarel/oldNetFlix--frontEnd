@@ -13,8 +13,7 @@ import {User} from '../../models/user.model';
 export class LoginComponent implements OnInit {
   user: User = {
     username: '',
-    password: '',
-    token: ''
+    password: ''
   };
   res: object;
 

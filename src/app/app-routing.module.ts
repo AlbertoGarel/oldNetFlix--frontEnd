@@ -7,6 +7,7 @@ import {PopulateComponent} from './components/populate/populate.component';
 import {GeneroIdComponent} from './components/genero-id/genero-id.component';
 import {BuscadorComponent} from './components/buscador/buscador.component';
 import {LoginComponent} from './components/login/login.component';
+import {RegisterComponent} from './components/register/register.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'movies/generos', component: GeneroComponent},
   {path: 'movies/generos/:gender', component: GeneroIdComponent},
   {path: 'movies/titulos/:title', component: BuscadorComponent},
-  {path: 'users/login', component: LoginComponent}
+  {path: 'users/login', component: LoginComponent},
+  {path: 'users/register', component: RegisterComponent}
 ];
 
 @NgModule({

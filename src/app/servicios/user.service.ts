@@ -18,7 +18,7 @@ export class UserService {
   // headers = { Authorization: this.user.token};
 
   register(user: User): Observable<object> {
-    return this.httpClient.post('http://localhost:3000/user/register', user);
+    return this.httpClient.post('http://localhost:3000/users/register', user);
   }
 
   login(user: User): Observable<object> {
@@ -40,11 +40,6 @@ export class UserService {
     this.user = user;
     localStorage.setItem('user', JSON.stringify(user));
   }
-
-  // isInSesion() {
-  //   console.log('%local', 'color:red', localStorage.getItem('user'))
-  //   return localStorage.getItem('user');
-  // }
 
   isInSesion() {
     console.log('service', localStorage.getItem('user'))

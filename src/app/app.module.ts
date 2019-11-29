@@ -30,6 +30,7 @@ import {ModalbuscadorComponent} from './components/modalbuscador/modalbuscador.c
 import {AngularMaterialModule} from './angular-material.module';
 import {LoginComponent} from './components/login/login.component';
 import {LogoutComponent} from './components/logout/logout.component';
+import {RegisterComponent} from './components/register/register.component';
 
 
 
@@ -45,7 +46,8 @@ import {LogoutComponent} from './components/logout/logout.component';
     BuscadorComponent,
     ModalbuscadorComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

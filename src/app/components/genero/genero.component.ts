@@ -6,8 +6,7 @@ import {Genero} from '../../models/genero.model';
 @Component({
   selector: 'app-genero',
   templateUrl: './genero.component.html',
-  styleUrls: ['./genero.component.css'],
-  exportAs: 'menuEnGeneros'
+  styleUrls: ['./genero.component.css']
 })
 
 export class GeneroComponent implements OnInit {

@@ -12,8 +12,7 @@ import {Token} from '../../models/token.model';
 export class LogoutComponent implements OnInit {
   user: User = {
     username: '',
-    password: '',
-    token: ''
+    password: ''
   };
 
 
