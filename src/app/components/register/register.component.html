@@ -1,28 +1,89 @@
-<form (submit)="registrar()" #form="ngForm">
-  <mat-form-field class="example-full-width">
-    <input
-      matInput
-      placeholder="Username"
-      required
-      #username
-      [(ngModel)]="user.username"
-      name="Username">
-  </mat-form-field>
+<!--<form (submit)="registrar()" #form="ngForm">-->
+<!--  <mat-form-field class="example-full-width">-->
+<!--    <input-->
+<!--      matInput-->
+<!--      placeholder="Username"-->
+<!--      required-->
+<!--      #username-->
+<!--      [(ngModel)]="user.username"-->
+<!--      name="Username">-->
+<!--  </mat-form-field>-->
 
-  <div></div>
+<!--  <div></div>-->
 
-  <mat-form-field class="example-full-width">
-    <input matInput
-           type="password"
-           placeholder="Password"
-           #password
-           [(ngModel)]="user.password"
-           name="Password">
-  </mat-form-field>
+<!--  <mat-form-field class="example-full-width">-->
+<!--    <input matInput-->
+<!--           type="password"-->
+<!--           placeholder="Password"-->
+<!--           #password-->
+<!--           [(ngModel)]="user.password"-->
+<!--           name="Password">-->
+<!--  </mat-form-field>-->
 
-  <div></div>
+<!--  <div></div>-->
 
-  <button mat-raised-button>Register</button>
+<!--  <button mat-raised-button>Register</button>-->
 
-</form>
-{{user | json}}
+<!--</form>-->
+<!--{{user | json}}-->
+
+<!--<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">-->
+<!--  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}-->
+<!--</button>-->
+<mat-horizontal-stepper [linear]="!isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>aquí tu nombre de usuario</ng-template>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Nombre"
+          formControlName="firstCtrl"
+          required
+          #username
+          [(ngModel)]="user.username">
+      </mat-form-field>
+      <div>
+        <button
+          mat-button matStepperNext>
+          Nex
+          t</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template
+        matStepLabel>
+        aquí tu password
+      </ng-template>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="password"
+          formControlName="secondCtrl"
+          required
+          #username
+          [(ngModel)]="user.password">
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template
+      matStepLabel
+    >Done</ng-template>
+    You are now done.
+    <div>
+      <button
+        mat-button
+        matStepperPrevious>Back</button>
+      <button mat-button (click)="registrar()">Reset</button>
+    </div>
+  </mat-step>
+
+
+</mat-horizontal-stepper>

@@ -14,7 +14,7 @@ export class LogoutComponent implements OnInit {
     username: '',
     password: ''
   };
-
+mensaje: string;
 
   constructor(
     private userService: UserService,
@@ -29,14 +29,19 @@ export class LogoutComponent implements OnInit {
   logOut() {
     this.userService.logOut()
       .subscribe(res => {
-          console.log(res);
+          console.log('res', res);
+          this.mensaje = res.message;
+          localStorage.removeItem('user');
+          localStorage.removeItem('token');
+          this.router.navigateByUrl('/movies');
         },
         error => {
           console.table('------ error en logout.component-----------', error);
+          alert('error');
         });
-    localStorage.removeItem('user');
-    localStorage.removeItem('token');
-    this.router.navigateByUrl('/movies');
+    // localStorage.removeItem('user');
+    // localStorage.removeItem('token');
+    // this.router.navigateByUrl('/movies');
   }
 
 }

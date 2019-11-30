@@ -29,7 +29,10 @@ export class UserService {
     console.log('token en logout servicio', localStorage.getItem('token'));
     return this.httpClient.patch('http://localhost:3000/users/logout',
       {},
-      {headers: {Authorization: 'bearer ' + localStorage.getItem('token')}});
+      {headers: {
+        Authorization: 'bearer ' + localStorage.getItem('token'),
+          'Content-Type': 'application/json'
+      }});
   }
 
   getUser(): User {

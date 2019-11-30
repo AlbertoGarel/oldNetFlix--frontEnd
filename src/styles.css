@@ -10,6 +10,8 @@ html, body {
 body {
   /*background-color: #f0f0f0;*/
   font-family: Roboto, 'Helvetice New', 'Arial', sans-serif!important;
+  margin-top: calc(10% + 5rem)!important;
+  background-color: #E8EAF6;
 }
 
 
@@ -19,6 +21,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   font-size: 1em;
   font-family: 'Calistoga', cursive;
 }
-body{
-  margin-top: calc(10% + 5rem)!important;
-}
+
+
+

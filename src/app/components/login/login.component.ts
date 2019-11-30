@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {UserService} from '../../servicios/user.service';
 import {User} from '../../models/user.model';
+import {log} from "util";
+
 
 @Component({
   selector: 'app-login',
@@ -40,7 +42,7 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['/movies']);
           }, 2500);
         },
-        error => this.res = error.error);
+        error => console.table(error));
   }
 
 }
