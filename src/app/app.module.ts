@@ -31,9 +31,11 @@ import {AngularMaterialModule} from './angular-material.module';
 import {LoginComponent} from './components/login/login.component';
 import {LogoutComponent} from './components/logout/logout.component';
 import {RegisterComponent} from './components/register/register.component';
-import {MatStepperModule} from "@angular/material/stepper";
-import {MatTabsModule} from "@angular/material/tabs";
-import {MatBadgeModule} from "@angular/material/badge";
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatBadgeModule} from '@angular/material/badge';
+import {DetailsComponent} from './components/details/details.component';
+import {MatListModule} from "@angular/material/list";
 
 
 
@@ -50,7 +52,8 @@ import {MatBadgeModule} from "@angular/material/badge";
     ModalbuscadorComponent,
     LoginComponent,
     LogoutComponent,
-    RegisterComponent
+    RegisterComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +79,8 @@ import {MatBadgeModule} from "@angular/material/badge";
     MatStepperModule,
     ReactiveFormsModule,
     MatTabsModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -30,4 +30,8 @@ export class MoviesService {
   getTitleAndOverview(title: string): Observable<any> {
     return this.httpClient.get(`http://localhost:3000/movies/titulos/${title}`);
   }
+  getMovieById(id: string) {
+    console.log('eeeeeeeeeeeeeeeee', 'estoy en el servicio')
+    return this.httpClient.get(`http://localhost:3000/movies/${id}`);
+  }
 }

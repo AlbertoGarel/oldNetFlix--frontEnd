@@ -1,0 +1,33 @@
+
+<mat-grid-list cols="1" rowHeight="2:1" *ngIf="movie">
+  <mat-grid-tile style="background:deeppink">
+    <section>
+      <article style="float:left;padding: 2em">
+    <img mat-card-image src="https://image.tmdb.org/t/p/w200/{{movie[0]?.poster_path}}" alt="poster">
+      </article>
+      <article style=" color:white;text-transform:uppercase">
+        <h1 style="color:black">{{movie[0]?.title}}</h1>
+        <p>TÍTULO ORIGINAL: <br>  {{movie[0].original_title}}</p>
+        <p>IDIOMA ORIGINAL: <br>  {{movie[0].original_language}}</p>
+        <p>POPULARIDAD:  <br> {{movie[0].popularity}}</p>
+        <p>VOTOS:  <br> {{movie[0].vote_count}}</p>
+
+        <p>DESCRIPCIÓN: <br> {{movie[0].overview}}}</p>
+      </article>
+    </section>
+  </mat-grid-tile>
+</mat-grid-list>
+
+
+<!--<mat-list>-->
+<!--  &lt;!&ndash;    <img src="https://image.tmdb.org/t/p/w200/{{movie[0].backdrop_path}}" alt="imagen de {{movie[0].title}}">&ndash;&gt;-->
+<!--  <mat-list-item>DESCRIPCIÓN: <br> {{movie[0].overview}}}</mat-list-item>-->
+<!--  <mat-divider></mat-divider>-->
+<!--  <mat-list-item>TÍTULO ORIGINAL: <br>  {{movie[0].original_title}}</mat-list-item>-->
+<!--  <mat-divider></mat-divider>-->
+<!--  <mat-list-item>IDIOMA ORIGINAL: <br>  {{movie[0].original_language}}</mat-list-item>-->
+<!--  <mat-divider></mat-divider>-->
+<!--  <mat-list-item>POPULARIDAD:  <br> {{movie[0].popularity}}</mat-list-item>-->
+<!--  <mat-divider></mat-divider>-->
+<!--  <mat-list-item>VOTOS:  <br> {{movie[0].vote_count}}</mat-list-item>-->
+<!--</mat-list>-->
