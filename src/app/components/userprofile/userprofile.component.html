@@ -1,0 +1,8 @@
+
+<button mat-button [matMenuTriggerFor]="menu" >
+  Hola, <span style="color:greenyellow"> {{userService.getUserName()}}</span>
+</button>
+<mat-menu #menu="matMenu">
+  <app-datosuser></app-datosuser>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>

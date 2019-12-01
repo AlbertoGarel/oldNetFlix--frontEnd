@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {User} from '../models/user.model';
 import {Observable} from 'rxjs';
-import {Token} from '../models/token.model';
 
 
 @Injectable({
@@ -25,14 +24,16 @@ export class UserService {
     return this.httpClient.post('http://localhost:3000/users/login', user);
   }
 
+
   logOut(): Observable<any> {
-    console.log('token en logout servicio', localStorage.getItem('token'));
     return this.httpClient.patch('http://localhost:3000/users/logout',
       {},
-      {headers: {
-        Authorization: 'bearer ' + localStorage.getItem('token'),
+      {
+        headers: {
+          Authorization: 'bearer ' + localStorage.getItem('token'),
           'Content-Type': 'application/json'
-      }});
+        }
+      });
   }
 
   getUser(): User {
@@ -45,12 +46,23 @@ export class UserService {
   }
 
   isInSesion() {
-    console.log('service', localStorage.getItem('user'))
     if (localStorage.getItem('user')) {
       return true;
     } else {
       return false;
     }
+  }
+
+  getUserName() {
+    const recup = localStorage.getItem('user');
+    const trans = JSON.parse(recup);
+    return trans.username;
+  }
+
+  getUserId() {
+    const recup = localStorage.getItem('user');
+    const trans = JSON.parse(recup);
+    return trans._id;
   }
 
 }

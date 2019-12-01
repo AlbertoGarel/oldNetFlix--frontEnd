@@ -1,0 +1,14 @@
+<h2>PERFIL USUARIO</h2>
+<h1>Nombre usuario: {{userService.getUserName()}}</h1>
+<h1>ID usuario: {{userService.getUserId()}}</h1>
+<hr>
+<h2>PEDIDOS</h2>
+<div *ngIf="pedidoUser">
+  <div *ngFor="let datos of datosPeli">
+    <img mat-card-image src="https://image.tmdb.org/t/p/w200/{{datos.poster_path}}" alt="poster">
+    <p>{{datos.title}}</p>
+    <p>{{datos.overview}}</p>
+  </div>
+  <p>Entregado pedido fecha: {{pedidoUser.fechaEntrega}}</p>
+  <p>devolución pedido fecha: {{pedidoUser.fechaDevolucion}}</p>
+</div>

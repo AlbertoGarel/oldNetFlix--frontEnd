@@ -9,6 +9,7 @@ import {BuscadorComponent} from './components/buscador/buscador.component';
 import {LoginComponent} from './components/login/login.component';
 import {RegisterComponent} from './components/register/register.component';
 import {DetailsComponent} from './components/details/details.component';
+import {DatouserComponent} from './components/datouser/datouser.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path: 'movies/titulos/:title', component: BuscadorComponent},
   {path: 'users/login', component: LoginComponent},
   {path: 'users/register', component: RegisterComponent},
-  {path: 'movies/:id', component: DetailsComponent}
+  {path: 'movies/:id', component: DetailsComponent},
+  {path: 'users/:userId', component: DatouserComponent}
 ];
 
 @NgModule({

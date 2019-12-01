@@ -12,9 +12,11 @@
       </a>
     </div>
     <div class="login" *ngIf="userService.isInSesion()">
-      <a mat-button routerLink="" routerLinkActive="active-link">
-      PERFIL DE <span style="color:grey"></span>
-      </a>
+<!--      <a mat-button routerLink="" routerLinkActive="active-link">-->
+<!--      PERFIL DE <span style="color:grey"></span>-->
+<!--      </a>-->
+      <app-userprofile></app-userprofile>
+      |
       <!--      <button mat-button>LOGOUT</button>-->
       <app-logout></app-logout>
     </div>
