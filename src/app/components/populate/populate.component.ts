@@ -11,28 +11,27 @@ import {Movie} from '../../models/movie.model';
 
 
 export class PopulateComponent implements OnInit {
-peliculas: Array<Movie> = [];
+  peliculas: Array<Movie> = [];
+
   constructor(private movieService: MoviesService) {
   }
 
   ngOnInit() {
-    // const populate = 'populate';
-    // this.movieService.getPopulate(populate)
-    //   .subscribe(resp => {
-    //     // tslint:disable-next-line:only-arrow-functions
-    //       resp.map(mayor => mayor.vote_average > 7);
-    //       this.peliculas = resp;
-    //       console.log(resp);
-    //   },
-    //     error => console.log(error)
-    //     );
+
     this.movieService.getPopulate()
       .subscribe(resp => {
-        this.peliculas = resp;
-        console.log(resp);
-      },
+          resp.map(item => {
+            if (item.vote_average > 8.1) {
+              this.peliculas = resp;
+              console.log(item);
+            } else {
+              console.log('no entra');
+            }
+          });
+
+        },
         error => console.log(error)
-        );
+      );
   }
 
 }

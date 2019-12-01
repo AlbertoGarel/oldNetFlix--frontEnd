@@ -8,26 +8,29 @@
             [ngStyle.lg]="{'width.%': 20, margin:'1%'}"
             [ngStyle.xl]="{'width.%': 20, margin:'1%'}"
   >
-    <mat-card-header
-      [ngStyle.xs]="{'height.%': 30, color: 'red'}"
-      [ngStyle.sm]="{'height.%': 20, color: 'blue'}"
-      [ngStyle.md]="{'height.%': 20, color: 'orange'}"
-      [ngStyle.lg]="{'height.%': 10, color: 'green'}"
-      [ngStyle.xl]="{'height.%': 10, color: 'greenyellow'}"
-    >
-      <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-header>
+      <!--      <div mat-card-avatar class="example-header-image"></div>-->
       <mat-card-title>{{pelicula.title}}</mat-card-title>
       <mat-card-subtitle>Popularidad: {{pelicula.popularity}}</mat-card-subtitle>
       <span matBadge="{{pelicula.vote_average}}" matBadgeOverlap="false"></span>
     </mat-card-header>
-    <img mat-card-image src="https://image.tmdb.org/t/p/w200/{{pelicula.poster_path}}" alt="poster">
+    <!--    <img mat-card-image src="https://image.tmdb.org/t/p/w200/{{pelicula.poster_path}}" alt="poster">-->
     <!--    <mat-card-content>-->
     <!--      <p>-->
     <!--        {{pelicula.overview}}-->
     <!--      </p>-->
     <!--    </mat-card-content>-->
+    <mat-tab-group>
+      <mat-tab label="Portada"> <img mat-card-image src="https://image.tmdb.org/t/p/w200/{{pelicula.poster_path}}" alt="poster"> </mat-tab>
+      <mat-tab label="Sinopsis">
+        <h6>SINOPSIS:</h6>
+        {{pelicula.overview}}
+
+      </mat-tab>
+    </mat-tab-group>
+
     <mat-card-actions>
-      <a mat-raised-button routerLink="{{pelicula.id}}">ALQUILAR</a>
+      <a mat-raised-button href="movies/{{pelicula.id}}">ALQUILAR</a>
     </mat-card-actions>
   </mat-card>
 </section>
@@ -41,5 +44,4 @@
 <!--</div>-->
 <!--<h2>{{peliculas.length}}</h2>-->
 <!--<h2>{{peliculas}}</h2>-->
-
 

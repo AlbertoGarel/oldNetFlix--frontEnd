@@ -11,7 +11,7 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class GeneroIdComponent implements OnInit {
   peliculas: Array<Movie> = [];
-
+  ruta = 'movies/';
   constructor(
     private movieService: MoviesService,
     private route: ActivatedRoute
