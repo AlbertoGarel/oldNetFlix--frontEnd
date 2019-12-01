@@ -30,8 +30,7 @@ style="width:90%; margin:0 auto"
       <!--      </p>-->
       <!--    </mat-card-content>-->
       <mat-card-actions>
-        <button mat-button>ALQUILAR</button>
-        <button mat-button>{{pelicula.vote_average}}</button>
+        <a mat-raised-button routerLink="movies/{{pelicula.id}}" (click)="onNoClick()">ALQUILAR</a>
       </mat-card-actions>
     </mat-card>
   </section>

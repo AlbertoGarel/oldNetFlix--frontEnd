@@ -18,6 +18,7 @@
   font-size: 1em;
 }
 #menu{
+  display: flex;
   align-self: flex-end;
 }
 #image-nav{

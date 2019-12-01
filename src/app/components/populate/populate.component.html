@@ -18,6 +18,7 @@
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>{{pelicula.title}}</mat-card-title>
       <mat-card-subtitle>Popularidad: {{pelicula.popularity}}</mat-card-subtitle>
+      <span matBadge="{{pelicula.vote_average}}" matBadgeOverlap="false"></span>
     </mat-card-header>
     <img mat-card-image src="https://image.tmdb.org/t/p/w200/{{pelicula.poster_path}}" alt="poster">
     <!--    <mat-card-content>-->
@@ -26,8 +27,7 @@
     <!--      </p>-->
     <!--    </mat-card-content>-->
     <mat-card-actions>
-      <button mat-button>ALQUILAR</button>
-      <button mat-button>{{pelicula.vote_average}}</button>
+      <a mat-raised-button routerLink="{{pelicula.id}}">ALQUILAR</a>
     </mat-card-actions>
   </mat-card>
 </section>

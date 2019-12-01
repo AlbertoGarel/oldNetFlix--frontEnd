@@ -56,7 +56,7 @@ import {DatouserComponent} from './components/datouser/datouser.component';
     DetailsComponent,
     UserprofileComponent,
     BotondatosuserComponent,
-    DatouserComponent
+    DatouserComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,18 +1,21 @@
-
 <mat-grid-list cols="1" rowHeight="2:1" *ngIf="movie">
   <mat-grid-tile style="background:deeppink">
     <section>
       <article style="float:left;padding: 2em">
-    <img mat-card-image src="https://image.tmdb.org/t/p/w200/{{movie[0]?.poster_path}}" alt="poster">
+        <img mat-card-image src="https://image.tmdb.org/t/p/w200/{{movie[0]?.poster_path}}" alt="poster">
       </article>
       <article style=" color:white;text-transform:uppercase">
         <h1 style="color:black">{{movie[0]?.title}}</h1>
         <p>TÍTULO ORIGINAL: <br>  {{movie[0].original_title}}</p>
         <p>IDIOMA ORIGINAL: <br>  {{movie[0].original_language}}</p>
-        <p>POPULARIDAD:  <br> {{movie[0].popularity}}</p>
-        <p>VOTOS:  <br> {{movie[0].vote_count}}</p>
+        <p>POPULARIDAD: <br> {{movie[0].popularity}}</p>
+        <p>VOTOS: <br> {{movie[0].vote_count}}</p>
 
         <p>DESCRIPCIÓN: <br> {{movie[0].overview}}}</p>
+      </article>
+      <article>
+        <button mat-raised-button (click)="alquilar()">ALQUILAR</button>
+        <p>{{mensaje}}</p>
       </article>
     </section>
   </mat-grid-tile>

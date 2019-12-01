@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {User} from '../models/user.model';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
@@ -9,7 +9,8 @@ import {HttpClient} from '@angular/common/http';
 export class PedidosService {
   user: User;
 
-  constructor( private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
   pedido(userId: string): Observable<object> {
     return this.httpClient.get(`http://localhost:3000/pedidos/${userId}`,
@@ -19,5 +20,16 @@ export class PedidosService {
           'Content-Type': 'application/json'
         }
       });
+  }
+
+  setPedido(userId: string, movieID: string): Observable<object> {
+    return this.httpClient.post(`http://localhost:3000/pedidos/${userId}`,
+      { movie_id: movieID},
+      {
+      headers: {
+        Authorization: 'bearer ' + localStorage.getItem('token'),
+        'Content-Type': 'application/json'
+      }
+    });
   }
 }
