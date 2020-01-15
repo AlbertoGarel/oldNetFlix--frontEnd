@@ -13,7 +13,8 @@ import {ModalbuscadorComponent} from '../modalbuscador/modalbuscador.component';
 })
 export class BuscadorComponent {
   peliculas: Array<Movie> = [];
-  titleSearch: '';
+  titleSearch: string;
+  ocult: string;
 
   constructor(
     private movieService: MoviesService,
@@ -22,15 +23,22 @@ export class BuscadorComponent {
   ) {
   }
 
+
   getTitleAndOverview() {
-    this.route.paramMap.subscribe(params => {
-      const title = this.titleSearch;
-      this.movieService.getTitleAndOverview(title)
-        .subscribe(movies => {
-          this.peliculas = movies;
-          this.openDialog(this.peliculas);
-        });
-    });
+    if (this.titleSearch == undefined) {
+
+    } else {
+      this.route.paramMap.subscribe(params => {
+        const title = this.titleSearch;
+        this.movieService.getTitleAndOverview(title)
+          .subscribe(movies => {
+            console.log('value movies', movies);
+            this.peliculas = movies;
+            this.openDialog(this.peliculas);
+          });
+      });
+    }
+
   }
 
   openDialog(peliculas: any): void {
@@ -41,8 +49,8 @@ export class BuscadorComponent {
       data: this.peliculas
     });
     console.log('modal', this.peliculas);
-    // dialogRef.afterClosed().subscribe(res => {
-    //   this.peliculas = res;
-    // });
+
   }
+
+
 }

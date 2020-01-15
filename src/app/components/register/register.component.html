@@ -1,4 +1,5 @@
-
+<h1>REGISTRO</h1>
+<hr>
 <mat-horizontal-stepper [linear]="!isLinear" #stepper>
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
@@ -15,8 +16,8 @@
       <div>
         <button
           mat-button matStepperNext>
-          Nex
-          t</button>
+          Suiguiente
+          </button>
       </div>
     </form>
   </mat-step>
@@ -28,6 +29,7 @@
       </ng-template>
       <mat-form-field>
         <input
+          password
           matInput
           placeholder="password"
           formControlName="secondCtrl"
@@ -36,23 +38,23 @@
           [(ngModel)]="user.password">
       </mat-form-field>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-button matStepperPrevious>Atrás</button>
+        <button mat-button matStepperNext>Suiguiente</button>
       </div>
     </form>
   </mat-step>
   <mat-step>
     <ng-template
       matStepLabel
-    >Done</ng-template>
-    You are now done.
+    >Hecho</ng-template>
+    ¿ Estás conforme ?
     <div>
       <button
         mat-button
-        matStepperPrevious>Back</button>
-      <button mat-button (click)="registrar()">Reset</button>
+        matStepperPrevious>Atrás</button>
+      <button mat-button (click)="registrar()">Confirmar</button>
     </div>
   </mat-step>
-
-
 </mat-horizontal-stepper>
+<hr>
+  <p >{{texto}}</p>

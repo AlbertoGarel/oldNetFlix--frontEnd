@@ -1,1 +1,68 @@
 
+/deep/ body, section {
+  background: deeppink !important;
+
+}
+
+section {
+  padding-bottom: 2rem;
+}
+
+h1 {
+  color: black;
+  text-align: center;
+}
+
+.datos {
+  color: white;
+}
+
+button {
+  margin: 0 auto;
+  display: block;
+}
+
+p {
+  color: black;
+}
+
+#art_1 {
+  float: left !important;
+  padding: 2em !important;
+}
+
+#art_2 {
+  color: white;
+  padding: 1em
+}
+#no_reg{
+  color: red;
+  padding: 2em;
+  background: white;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+h3{
+  text-align: center;
+  background: white;
+  width: 50%;
+  padding: .5em;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+.shadow{
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+@media (max-width: 500px) {
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #art_1 {
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -26,7 +26,7 @@ export class DatouserComponent implements OnInit {
       .subscribe(resp => {
           // @ts-ignore
 
-          console.table(resp.movie_id);
+          console.log(resp.movie_id);
           this.pedidoUser = resp;
           // @ts-ignore
           this.movieServices.getMovieById(resp.movie_id)

@@ -1,7 +1,7 @@
 <header id="header">
   <section>
     <div id="image-nav">
-      <a routerLink="/" routerLinkActive="active-link">
+      <a routerLink="/movies" routerLinkActive="active-link">
         <img src="../../../assets/images/oldNetflixLogo.png" alt="logo">
       </a>
     </div>
@@ -12,12 +12,8 @@
       </a>
     </div>
     <div class="login" *ngIf="userService.isInSesion()">
-<!--      <a mat-button routerLink="" routerLinkActive="active-link">-->
-<!--      PERFIL DE <span style="color:grey"></span>-->
-<!--      </a>-->
       <app-userprofile></app-userprofile>
       |
-      <!--      <button mat-button>LOGOUT</button>-->
       <app-logout></app-logout>
     </div>
     <div class="login" *ngIf="!userService.isInSesion()">

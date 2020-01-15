@@ -1,14 +1,22 @@
-<h2>PERFIL USUARIO</h2>
-<h1>Nombre usuario: {{userService.getUserName()}}</h1>
-<h1>ID usuario: {{userService.getUserId()}}</h1>
-<hr>
-<h2>PEDIDOS</h2>
+<section class="perfil">
+  <h2>PERFIL USUARIO</h2>
+  <hr>
+  <h1>Nombre usuario:   <span>{{userService.getUserName()}}</span></h1>
+  <h1>ID usuario:   <span>{{userService.getUserId()}}</span></h1>
+</section>
+<section class="perfil">
+  <h2>PEDIDOS</h2>
+  <hr>
 <div *ngIf="pedidoUser">
   <div *ngFor="let datos of datosPeli">
     <img mat-card-image src="https://image.tmdb.org/t/p/w200/{{datos.poster_path}}" alt="poster">
-    <p>{{datos.title}}</p>
-    <p>{{datos.overview}}</p>
+    <p id="titulo">{{datos.title}}</p>
+    <p id="overview">{{datos.overview}}</p>
   </div>
-  <p>Entregado pedido fecha: {{pedidoUser.fechaEntrega}}</p>
-  <p>devolución pedido fecha: {{pedidoUser.fechaDevolucion}}</p>
+  <p id="entrega">Entregado pedido fecha: {{pedidoUser.fechaEntrega}}</p>
+  <p id="devolu">devolución pedido fecha: {{pedidoUser.fechaDevolucion}}</p>
 </div>
+<div id="alerta" *ngIf="!datosPeli">
+  <p>No tienes ningún pedido activo. Realiza uno.</p>
+</div>
+</section>

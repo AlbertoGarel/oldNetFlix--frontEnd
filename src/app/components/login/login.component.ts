@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
     password: ''
   };
   res: object;
-
+  texto: string;
 
   constructor(
     private userService: UserService,
@@ -33,10 +33,15 @@ export class LoginComponent implements OnInit {
   login() {
     this.userService.login(this.user)
       .subscribe(res => {
-          console.table(this.user);
+          console.log('------------------', res);
+          // @ts-ignore
+          this.texto = res.text;
           this.res = res;
           this.userService
             .setUser(res['user']);
+          if (res['token'] === undefined) {
+            return;
+          }
           localStorage.setItem('token', res['token']);
           setTimeout(() => {
             this.router.navigate(['/movies']);

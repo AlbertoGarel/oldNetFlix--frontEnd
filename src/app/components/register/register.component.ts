@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {User} from '../../models/user.model';
 import {UserService} from '../../servicios/user.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Route} from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -17,10 +18,11 @@ export class RegisterComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  texto: string;
 
   constructor(
     private userService: UserService,
-    private _formBuilder: FormBuilder
+    private _formBuilder: FormBuilder,
   ) {
   }
 
@@ -35,6 +37,12 @@ export class RegisterComponent implements OnInit {
 
   registrar() {
     this.userService.register(this.user)
-      .subscribe(res => console.log(res));
+    // @ts-ignore
+      .subscribe(res => this.texto = res.text);
+    setTimeout(function() {
+      this.router.navigate(['users/login']);
+    });
   }
+
+
 }

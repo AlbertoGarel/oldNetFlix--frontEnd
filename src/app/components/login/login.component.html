@@ -1,23 +1,31 @@
 <!--<p>login works!</p>-->
-<form (submit)="login()" #form="ngForm">
-  <mat-form-field class="example-full-width">
-    <input
-      matInput
-      placeholder="Username"
-      required
-      #username
-      [(ngModel)]="user.username"
-      name="Username">
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput
-           type="password"
-           placeholder="Password"
-           #password
-           [(ngModel)]="user.password"
-           name="Password">
-  </mat-form-field>
-  <button mat-raised-button>Login</button>
+<section id="cont-prin-log">
+  <h1 xmlns:font-weight="http://www.w3.org/1999/xhtml">REGISTRO</h1>
+  <article id="login" class="shadow">
+    <form (submit)="login()" #form="ngForm">
+      <mat-form-field class="example-full-width">
+        <input
+          matInput
+          placeholder="Username"
+          required
+          #username
+          [(ngModel)]="user.username"
+          name="Username">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput
+               type="password"
+               placeholder="Password"
+               #password
+               [(ngModel)]="user.password"
+               name="Password">
+      </mat-form-field>
+      <button mat-raised-button style="display: block">Login</button>
+    </form>
 
-</form>
+  </article>
+  <div id="texto" *ngIf="texto">
+    <p>{{texto}}</p>
+  </div>
+</section>
 {{res?.message}}

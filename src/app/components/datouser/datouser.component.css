@@ -1,0 +1,40 @@
+.perfil{
+  width: 70%;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: white;
+
+}
+h2{
+  text-align: center;
+  color: cadetblue;
+}
+span{
+  color: dimgrey;
+}
+#alerta{
+  background: red;
+  padding: 1em;
+  text-align: center;
+  color: white;
+}
+#devolu{
+  color: red;
+}
+#entrega{
+  color: blue;
+}
+#titulo{
+  font-weight: 900;
+}
+#overview{
+  text-align: justify;
+}
+#triangulo{
+  margin: .5em;
+}
+@media (max-width: 500px){
+  .perfil{
+    font-size: .7em;
+  }
+}

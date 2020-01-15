@@ -14,12 +14,6 @@
       <mat-card-subtitle>Popularidad: {{pelicula.popularity}}</mat-card-subtitle>
       <span matBadge="{{pelicula.vote_average}}" matBadgeOverlap="false"></span>
     </mat-card-header>
-<!--    <img mat-card-image src="https://image.tmdb.org/t/p/w200/{{pelicula.poster_path}}" alt="poster">-->
-    <!--    <mat-card-content>-->
-    <!--      <p>-->
-    <!--        {{pelicula.overview}}-->
-    <!--      </p>-->
-    <!--    </mat-card-content>-->
     <mat-tab-group>
       <mat-tab label="Portada"> <img mat-card-image src="https://image.tmdb.org/t/p/w200/{{pelicula.poster_path}}" alt="poster"> </mat-tab>
       <mat-tab label="Sinopsis">
@@ -29,19 +23,12 @@
       </mat-tab>
     </mat-tab-group>
 
+
     <mat-card-actions>
-      <a mat-raised-button routerLink="{{pelicula.id}}">ALQUILAR</a>
+      <a mat-raised-button routerLink="{{pelicula.id}}" routeractive="active-link">ALQUILAR</a>
     </mat-card-actions>
   </mat-card>
 </section>
 
 
-<!--<div class="movies">-->
-<!--  <div class="movie" *ngFor="let pelicula of peliculas">-->
-<!--    <h2>{{pelicula.title}}</h2>-->
-<!--    <img src="https://image.tmdb.org/t/p/w200/{{pelicula.poster_path}}" alt="poster">-->
-<!--  </div>-->
-<!--</div>-->
-<!--<h2>{{peliculas.length}}</h2>-->
-<!--<h2>{{peliculas}}</h2>-->
 

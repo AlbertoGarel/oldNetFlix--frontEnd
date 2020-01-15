@@ -1,0 +1,33 @@
+#cont-prin-log{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#login{
+  background: white;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+}
+h1{
+  text-align: center;
+
+}
+mat-form-field{
+  padding: 1em;
+}
+.shadow{
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+@media (max-width: 500px){
+  #login{
+    background: white;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+  }
+
+}

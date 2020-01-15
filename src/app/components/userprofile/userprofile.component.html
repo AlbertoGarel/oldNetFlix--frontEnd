@@ -1,8 +1,12 @@
-
-<button mat-button [matMenuTriggerFor]="menu" >
-  <span style="color:greenyellow"> {{userService.getUserName()}}</span>
+<button mat-button [matMenuTriggerFor]="menu">
+  <span style="color:greenyellow"> {{userService.getUserName()}} <span>
+    <span id="triangulo" class="mat-expansion-indicator ng-tns-c10-2 ng-trigger ng-trigger-indicatorRotate ng-star-inserted"
+          style="transform: rotate(0deg);">
+    </span>
+  </span>
+  </span>
 </button>
 <mat-menu #menu="matMenu">
   <app-datosuser></app-datosuser>
-  <button mat-menu-item>Item 2</button>
 </mat-menu>
+<!--<img src="./src/assets/images/images.png" alt="">-->

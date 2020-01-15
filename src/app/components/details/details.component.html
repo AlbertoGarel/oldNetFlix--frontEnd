@@ -1,36 +1,26 @@
-<mat-grid-list cols="1" rowHeight="2:1" *ngIf="movie">
-  <mat-grid-tile style="background:deeppink">
-    <section>
-      <article style="float:left;padding: 2em">
+<!--<mat-grid-list cols="1" rowHeight="1:1" *ngIf="movie">-->
+<!--  <mat-grid-tile style="background:deeppink">-->
+    <section *ngIf="movie">
+      <h1 >"{{movie[0]?.title}}"</h1>
+      <article id="art_1">
         <img mat-card-image src="https://image.tmdb.org/t/p/w200/{{movie[0]?.poster_path}}" alt="poster">
       </article>
-      <article style=" color:white;text-transform:uppercase">
-        <h1 style="color:black">{{movie[0]?.title}}</h1>
-        <p>TÍTULO ORIGINAL: <br>  {{movie[0].original_title}}</p>
-        <p>IDIOMA ORIGINAL: <br>  {{movie[0].original_language}}</p>
-        <p>POPULARIDAD: <br> {{movie[0].popularity}}</p>
-        <p>VOTOS: <br> {{movie[0].vote_count}}</p>
+      <article id="art_2" >
+        <p>TÍTULO ORIGINAL: <br>  <span class="datos">"{{movie[0].original_title}}"</span></p>
+        <p>IDIOMA ORIGINAL: <br>  <span class="datos">{{movie[0].original_language}}</span></p>
+        <p>POPULARIDAD: <br> <span class="datos">{{movie[0].popularity}}</span></p>
+        <p>VOTOS: <br> <span class="datos">{{movie[0].vote_count}}</span></p>
 
-        <p>DESCRIPCIÓN: <br> {{movie[0].overview}}}</p>
+        <p>DESCRIPCIÓN: <br> <span class="datos">{{movie[0].overview}}</span></p>
       </article>
-      <article>
+      <article id="art_3" *ngIf="this.userService.isInSesion()">
+        <h3 class="shadow">5 días de alquiler para cualquier película</h3>
+        <div *ngIf="mensaje">
+        <span class="aviso" >{{mensaje}}</span>
+        </div>
         <button mat-raised-button (click)="alquilar()">ALQUILAR</button>
-        <p>{{mensaje}}</p>
+      </article>
+      <article id="no_reg" class="shadow" *ngIf="!this.userService.isInSesion()">
+        <h4>DEBES ESTAR REGISTRADO PARA PODER ALQUILAR UNA PELÍCULA</h4>
       </article>
     </section>
-  </mat-grid-tile>
-</mat-grid-list>
-
-
-<!--<mat-list>-->
-<!--  &lt;!&ndash;    <img src="https://image.tmdb.org/t/p/w200/{{movie[0].backdrop_path}}" alt="imagen de {{movie[0].title}}">&ndash;&gt;-->
-<!--  <mat-list-item>DESCRIPCIÓN: <br> {{movie[0].overview}}}</mat-list-item>-->
-<!--  <mat-divider></mat-divider>-->
-<!--  <mat-list-item>TÍTULO ORIGINAL: <br>  {{movie[0].original_title}}</mat-list-item>-->
-<!--  <mat-divider></mat-divider>-->
-<!--  <mat-list-item>IDIOMA ORIGINAL: <br>  {{movie[0].original_language}}</mat-list-item>-->
-<!--  <mat-divider></mat-divider>-->
-<!--  <mat-list-item>POPULARIDAD:  <br> {{movie[0].popularity}}</mat-list-item>-->
-<!--  <mat-divider></mat-divider>-->
-<!--  <mat-list-item>VOTOS:  <br> {{movie[0].vote_count}}</mat-list-item>-->
-<!--</mat-list>-->
